@@ -1,7 +1,7 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   output: {
     filename: 'worker.js',
     path: path.join(__dirname, 'dist'),
@@ -9,18 +9,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   mode: 'development',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.jsx', '.js'],
   },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        options: {
-          // transpileOnly is useful to skip typescript checks occasionally:
-          // transpileOnly: true,
-        },
-      },
-    ],
-  },
-}
+  module: {},
+};
